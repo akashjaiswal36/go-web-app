@@ -41,7 +41,6 @@ jobs:
       with:
         version: v1.56.2
 
-
   push:
     runs-on: ubuntu-latest
 
