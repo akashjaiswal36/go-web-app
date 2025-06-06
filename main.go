@@ -26,6 +26,9 @@ func contactPage(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	// Serve static files from /static/
+	fs := http.FileServer(http.Dir("static"))
+	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	http.HandleFunc("/home", homePage)
 	http.HandleFunc("/courses", coursePage)
